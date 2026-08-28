@@ -36,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geist.variable
       )}
     >
-      <body className="min-h-full overflow-x-clip">
+      <body className="min-h-full bg-[#f7f7fa] dark:bg-[#08080a] overflow-x-clip">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

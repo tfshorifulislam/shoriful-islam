@@ -30,7 +30,7 @@ const Navbar = () => {
                     href="#home"
                     className="text-xl font-bold tracking-tight"
                 >
-                    S<span className="text-muted-foreground">.</span>
+                    SF<span className="text-muted-foreground">.</span>
                 </Link>
 
                 {/* Desktop Navigation */}
