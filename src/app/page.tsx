@@ -1,4 +1,6 @@
 import HeroSection from "@/components/banner/HeroSection";
+import ProjectsSection from "@/components/projects/ProjectCard";
+
 import SkillsSection from "@/components/skills/SkillsSection";
 
 
@@ -9,6 +11,8 @@ const HomePage = () => {
       <HeroSection />
 
       <SkillsSection/>
+
+      <ProjectsSection/>
 
     </div>
   );
