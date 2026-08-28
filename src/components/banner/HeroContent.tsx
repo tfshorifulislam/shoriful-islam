@@ -61,17 +61,17 @@ const HeroContent = () => {
       >
         <Link
           href="#projects"
-          className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background">
+          className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-semibold text-background">
           View Projects
 
           <ArrowUpRight className="h-4 w-4" />
         </Link>
 
-        <Link
-          href="#contact"
-          className="inline-flex items-center rounded-full border px-7 py-3.5 text-sm font-semibold">
-          Contact Me
-        </Link>
+        <a
+          href="https://drive.google.com/uc?export=download&id=1uwRbhBoJpNHJAonmbq4DwjyeVQi3oPxa"
+          className="inline-flex items-center rounded-full border px-6 py-3.5 text-sm font-semibold">
+          Download CV
+        </a>
       </div>
 
       <div
