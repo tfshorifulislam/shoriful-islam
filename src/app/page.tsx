@@ -1,4 +1,5 @@
 import HeroSection from "@/components/banner/HeroSection";
+import GithubSection from "@/components/githubStats/githubSection";
 import ProjectsSection from "@/components/projects/ProjectsSection";
 import SkillsSection from "@/components/skills/SkillsSection";
 
@@ -12,6 +13,8 @@ const HomePage = () => {
       <SkillsSection/>
 
       <ProjectsSection/>
+
+      <GithubSection/>
 
     </div>
   );
