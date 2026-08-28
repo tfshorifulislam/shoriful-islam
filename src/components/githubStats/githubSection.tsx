@@ -31,39 +31,24 @@ type GithubData = {
 };
 
 const GithubSection = () => {
-  const [data, setData] = useState<GithubData | null>(
-    null,
-  );
-
+  const [data, setData] = useState<GithubData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchGithubData = async () => {
       try {
-        const response = await fetch(
-          "/api/github",
-          {
-            next: {
-              revalidate: 3600,
-            },
-          },
-        );
-
+        const response = await fetch("/api/github");
         const result = await response.json();
 
         if (!response.ok || !result.success) {
           throw new Error(
-            result.message ??
-              "Failed to fetch GitHub stats",
+            result.message ?? "Failed to fetch GitHub stats",
           );
         }
 
         setData(result.data);
       } catch (error) {
-        console.error(
-          "GitHub stats error:",
-          error,
-        );
+        console.error("GitHub stats error:", error);
       } finally {
         setLoading(false);
       }
@@ -74,179 +59,167 @@ const GithubSection = () => {
 
   return (
     <section
-      id="github"
-      className="relative py-20 sm:py-24 md:py-32"
+      id="github-stats"
+      className="relative py-16 sm:py-20 md:py-28 lg:py-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-10">
+        <div className="mb-8 sm:mb-10 md:mb-12">
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-10 bg-foreground" />
+            <span className="h-px w-8 bg-foreground sm:w-10" />
 
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground sm:text-xs sm:tracking-[0.3em]">
               GitHub
             </span>
           </div>
 
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-4xl font-black tracking-[-0.05em] sm:text-5xl md:text-6xl">
+              <h2 className="text-4xl font-black leading-[0.95] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-7xl">
                 Open
                 <span className="block text-muted-foreground">
                   source.
                 </span>
               </h2>
+
+              <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+                Explore my open-source work, contributions, and
+                development activity on GitHub.
+              </p>
             </div>
 
             <Link
               href="https://github.com/tfshorifulislam"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-fit items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-colors hover:bg-muted"
+              className="group inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2.5 text-xs font-semibold transition-all hover:bg-muted sm:px-5 sm:py-3 sm:text-sm"
             >
               <FaGithub className="h-4 w-4" />
 
-              @{data?.username ?? "tfshorifulislam"}
+              <span>
+                @{data?.username ?? "tfshorifulislam"}
+              </span>
 
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
             </Link>
           </div>
         </div>
 
         {/* Main Card */}
-        <div className="overflow-hidden rounded-[30px] border bg-card shadow-xl">
+        <div className="overflow-hidden rounded-[24px] border bg-card shadow-xl sm:rounded-[30px]">
           {/* Stats */}
-          <div className="grid grid-cols-2 border-b sm:grid-cols-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4">
             <Stat
               icon={<GitFork className="h-4 w-4" />}
-              value={
-                loading
-                  ? "—"
-                  : `${data?.repositories ?? 0}`
-              }
+              value={loading ? "—" : String(data?.repositories ?? 0)}
               label="Repositories"
+              className="border-b border-r sm:border-b-0"
             />
 
             <Stat
               icon={<Users className="h-4 w-4" />}
-              value={
-                loading
-                  ? "—"
-                  : `${data?.followers ?? 0}`
-              }
+              value={loading ? "—" : String(data?.followers ?? 0)}
               label="Followers"
+              className="border-b sm:border-b-0 sm:border-r"
             />
 
             <Stat
               icon={<Users className="h-4 w-4" />}
-              value={
-                loading
-                  ? "—"
-                  : `${data?.following ?? 0}`
-              }
+              value={loading ? "—" : String(data?.following ?? 0)}
               label="Following"
+              className="border-r"
             />
 
             <Stat
-              icon={
-                <GitCommitHorizontal className="h-4 w-4" />
-              }
-              value={
-                loading
-                  ? "—"
-                  : `${data?.commits ?? 0}`
-              }
+              icon={<GitCommitHorizontal className="h-4 w-4" />}
+              value={loading ? "—" : String(data?.commits ?? 0)}
               label="Commits"
             />
           </div>
 
-          {/* Contribution */}
-          <div className="p-5 sm:p-7 md:p-10">
-            <div className="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+          {/* Contribution Section */}
+          <div className="p-4 sm:p-6 md:p-8 lg:p-10">
+            {/* Contribution Header */}
+            <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-sm font-semibold">
+                <p className="text-sm font-semibold sm:text-base">
                   Contribution activity
                 </p>
 
-                <p className="mt-1 text-xs text-muted-foreground">
+                <p className="mt-1 text-xs leading-5 text-muted-foreground sm:text-sm">
                   {loading
                     ? "Loading contribution data..."
                     : `${data?.totalContributions ?? 0} contributions in the last year`}
                 </p>
               </div>
 
-              <p className="text-xs text-muted-foreground">
-                @tfshorifulislam
-              </p>
+              <span className="hidden text-xs text-muted-foreground sm:block">
+                @{data?.username ?? "tfshorifulislam"}
+              </span>
             </div>
 
-            {/* Contribution Graph */}
-            <div className="overflow-x-auto pb-2">
-              <div className="flex min-w-[760px] gap-1">
+            {/* Graph */}
+            <div className="w-full overflow-hidden">
+              <div className="flex w-full items-stretch justify-between gap-0.5 sm:gap-0.5">
                 {loading
-                  ? Array.from({
-                      length: 52,
-                    }).map((_, weekIndex) => (
-                      <div
-                        key={weekIndex}
-                        className="flex flex-col gap-1"
-                      >
-                        {Array.from({
-                          length: 7,
-                        }).map(
-                          (_, dayIndex) => (
-                            <div
-                              key={dayIndex}
-                              className="h-3 w-3 rounded-[3px] bg-muted sm:h-3.5 sm:w-3.5"
-                            />
-                          ),
-                        )}
-                      </div>
-                    ))
-                  : data?.weeks.map(
-                      (week, weekIndex) => (
+                  ? Array.from({ length: 52 }).map(
+                      (_, weekIndex) => (
                         <div
                           key={weekIndex}
-                          className="flex flex-col gap-1"
+                          className="flex min-w-0 flex-1 flex-col gap-0.5 sm:gap-0.5"
                         >
-                          {week.contributionDays.map(
-                            (day) => (
+                          {Array.from({ length: 7 }).map(
+                            (_, dayIndex) => (
                               <div
-                                key={day.date}
-                                title={`${day.contributionCount} contributions on ${day.date}`}
-                                className="h-3 w-3 rounded-[3px] sm:h-3.5 sm:w-3.5"
-                                style={{
-                                  backgroundColor:
-                                    day.color,
-                                }}
+                                key={dayIndex}
+                                className="aspect-square w-full rounded-xs bg-muted"
                               />
                             ),
                           )}
                         </div>
                       ),
-                    )}
+                    )
+                  : data?.weeks.map((week, weekIndex) => (
+                      <div
+                        key={weekIndex}
+                        className="flex min-w-0 flex-1 flex-col gap-0.5 sm:gap-0.5"
+                      >
+                        {week.contributionDays.map(
+                          (day) => (
+                            <div
+                              key={day.date}
+                              title={`${day.contributionCount} contributions on ${day.date}`}
+                              className="aspect-square w-full rounded-xs"
+                              style={{
+                                backgroundColor: day.color,
+                              }}
+                            />
+                          ),
+                        )}
+                      </div>
+                    ))}
               </div>
             </div>
 
             {/* Legend */}
-            <div className="mt-5 flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">
+            <div className="mt-5 flex items-center justify-end gap-2">
+              <span className="text-[10px] text-muted-foreground sm:text-xs">
                 Less
               </span>
 
-              <div className="flex items-center gap-1">
-                <span className="h-3 w-3 rounded-[3px] border bg-muted" />
+              <div className="flex items-center gap-0.75">
+                <span className="h-2.5 w-2.5 rounded-xs border bg-muted sm:h-3 sm:w-3" />
 
-                <span className="h-3 w-3 rounded-[3px] bg-[#9be9a8]" />
+                <span className="h-2.5 w-2.5 rounded-xs bg-[#9be9a8] sm:h-3 sm:w-3" />
 
-                <span className="h-3 w-3 rounded-[3px] bg-[#40c463]" />
+                <span className="h-2.5 w-2.5 rounded-xs bg-[#40c463] sm:h-3 sm:w-3" />
 
-                <span className="h-3 w-3 rounded-[3px] bg-[#30a14e]" />
+                <span className="h-2.5 w-2.5 rounded-xs bg-[#30a14e] sm:h-3 sm:w-3" />
 
-                <span className="h-3 w-3 rounded-[3px] bg-[#216e39]" />
+                <span className="h-2.5 w-2.5 rounded-xs bg-[#216e39] sm:h-3 sm:w-3" />
               </div>
 
-              <span className="text-xs text-muted-foreground">
+              <span className="text-[10px] text-muted-foreground sm:text-xs">
                 More
               </span>
             </div>
@@ -261,22 +234,26 @@ const Stat = ({
   icon,
   value,
   label,
+  className = "",
 }: {
   icon: React.ReactNode;
   value: string;
   label: string;
+  className?: string;
 }) => {
   return (
-    <div className="border-r p-5 last:border-r-0 sm:p-6">
-      <div className="mb-3 flex items-center gap-2 text-muted-foreground">
+    <div
+      className={`min-w-0 p-4 sm:p-5 md:p-6 ${className}`}
+    >
+      <div className="mb-2 flex min-w-0 items-center gap-2 text-muted-foreground sm:mb-3">
         {icon}
 
-        <span className="text-[10px] font-semibold uppercase tracking-[0.18em]">
+        <span className="truncate text-[9px] font-semibold uppercase tracking-[0.12em] sm:text-[10px] sm:tracking-[0.18em]">
           {label}
         </span>
       </div>
 
-      <p className="text-2xl font-black tracking-[-0.04em] sm:text-3xl">
+      <p className="text-2xl font-black tracking-tighter sm:text-3xl md:text-4xl">
         {value}
       </p>
     </div>
