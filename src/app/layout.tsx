@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Navbar from "@/components/shared/Navbar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -32,12 +33,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
+          <SidebarProvider>
 
-          <Navbar />
-          
-          <main>
-            {children}
-          </main>
+            <Navbar />
+
+            <main>
+              {children}
+            </main>
+            
+          </SidebarProvider>
 
         </ThemeProvider>
 
