@@ -41,6 +41,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         style={{
           scale,
           top: `${index * 20}px`,
+          zIndex: index + 1,
         }}
         className="relative flex h-[650px] w-full max-w-6xl flex-col overflow-hidden rounded-[30px] border bg-card p-3 shadow-2xl sm:p-5 md:h-[580px] md:flex-row md:p-6 lg:p-8"
       >
@@ -95,7 +96,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-opacity hover:opacity-80"
+                className=" relative z-20 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-opacity hover:opacity-80"
               >
                 Live Project
                 <ArrowUpRight className="h-4 w-4" />
@@ -105,7 +106,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-colors hover:bg-muted"
+                className="relative z-20 inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-colors hover:bg-muted"
               >
                 <FaGithub className="h-4 w-4" />
                 GitHub

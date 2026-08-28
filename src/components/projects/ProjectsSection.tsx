@@ -10,6 +10,23 @@ import ProjectHeader from "./ProjectHeader";
 const PROJECTS: Project[] = [
     {
         id: 1,
+        title: "Story-Hub",
+        description:
+            "A modern full-stack social publishing platform where users can discover stories, share their ideas, publish articles, interact with other users, and build their personal profile.",
+        image: "/storyhub.png",
+        live: "https://storyhub-iota.vercel.app/",
+        github: "https://github.com/tfshorifulislam/StoryHub",
+        tech: [
+            "TypeScript",
+            "Next.js",
+            "Node.js",
+            "Express.js",
+            "Prisma",
+            "PostgreSQL",
+        ],
+    },
+    {
+        id: 2,
         title: "UgenAI",
         description:
             "ugenAI is an AI-powered image generation and creative sharing platform where users can generate, explore, and share AI-generated artwork.",
@@ -26,11 +43,11 @@ const PROJECTS: Project[] = [
         ],
     },
     {
-        id: 2,
+        id: 3,
         title: "Homez",
         description:
             "Homez is a modern, full-featured, multi-role Real Estate Platform that connects Buyers, Sellers, and Admins in one seamless ecosystem.",
-        image: "/homez.png",
+        image: "/homez.jpg",
         live: "https://homez-two.vercel.app/",
         github:
             "https://github.com/tfshorifulislam/homez-client",
@@ -43,11 +60,11 @@ const PROJECTS: Project[] = [
         ],
     },
     {
-        id: 3,
+        id: 4,
         title: "SportNest",
         description:
             "Modern sports venue booking platform for football, cricket, futsal & more.",
-        image: "/image.png",
+        image: "/sportnest.png",
         live: "https://sport-nest-rouge.vercel.app",
         github:
             "https://github.com/tfshorifulislam/sport-nest-client",
@@ -60,11 +77,11 @@ const PROJECTS: Project[] = [
         ],
     },
     {
-        id: 4,
+        id: 5,
         title: "ResumeMint AI",
         description:
             "ResumeMint AI is a modern AI-powered resume toolkit built with TypeScript.",
-        image: "/resume builder.jpg",
+        image: "/resume-builder.jpg",
         live: "https://resumimintai.vercel.app/",
         github:
             "https://github.com/tfshorifulislam/AI-resume",
@@ -75,11 +92,11 @@ const PROJECTS: Project[] = [
         ],
     },
     {
-        id: 5,
+        id: 6,
         title: "Pixora",
         description:
             "Retro-Futuristic AI Landing Page built with Next.js, TypeScript, Tailwind CSS, Framer Motion.",
-        image: "/landingpage.jpg",
+        image: "/pixora.png",
         live: "https://pixora-rho.vercel.app/",
         github:
             "https://github.com/tfshorifulislam/pixora",
@@ -89,51 +106,8 @@ const PROJECTS: Project[] = [
             "TailwindCSS",
         ],
     },
-    {
-        id: 6,
-        title: "Mentora",
-        description:
-            "Online learning platform for creators, mentors and educators.",
-        image: "/1.4.png",
-        live: "https://mentora-neon-eta.vercel.app/",
-        github:
-            "https://github.com/tfshorifulislam/mentora",
-        tech: [
-            "Next.js",
-            "Node.js",
-            "MongoDB",
-        ],
-    },
-    {
-        id: 7,
-        title: "Skill Sphere",
-        description:
-            "Modern LMS platform with authentication and dashboard system.",
-        image: "/1.1.png",
-        live: "https://skill-sphere-topaz.vercel.app/",
-        github:
-            "https://github.com/tfshorifulislam/Skill-Sphere",
-        tech: [
-            "Next.js",
-            "Firebase",
-            "Tailwind",
-        ],
-    },
-    {
-        id: 8,
-        title: "Digital Tools Platform",
-        description:
-            "Marketplace for digital products with modern UI & performance focus.",
-        image: "/1.2.png",
-        live: "https://digiools.vercel.app/",
-        github:
-            "https://github.com/tfshorifulislam/digital-tools-platform",
-        tech: [
-            "React",
-            "Next.js",
-            "MongoDB",
-        ],
-    },
+    
+    
 ];
 
 const PROJECTS_PER_PAGE = 4;
@@ -141,23 +115,16 @@ const PROJECTS_PER_PAGE = 4;
 const ProjectsSection = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
-    const totalPages = Math.ceil(
-        PROJECTS.length / PROJECTS_PER_PAGE,
-    );
+    const totalPages = Math.ceil( PROJECTS.length / PROJECTS_PER_PAGE, );
 
-    const startIndex =
-        (currentPage - 1) * PROJECTS_PER_PAGE;
+    const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
 
-    const currentProjects = PROJECTS.slice(
-        startIndex,
-        startIndex + PROJECTS_PER_PAGE,
-    );
+    const currentProjects = PROJECTS.slice( startIndex, startIndex + PROJECTS_PER_PAGE, );
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
 
-        document
-            .getElementById("projects")
+        document.getElementById("projects")
             ?.scrollIntoView({
                 behavior: "smooth",
                 block: "start",

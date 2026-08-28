@@ -26,7 +26,7 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <Link
-                    href="#home"
+                    href="#about"
                     className="text-xl font-bold tracking-tight"
                 >
                     SF<span className="text-muted-foreground">.</span>

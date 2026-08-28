@@ -10,17 +10,8 @@ interface ProjectPaginationProps {
   onPageChange: (page: number) => void;
 }
 
-const ProjectPagination = ({
-  currentPage,
-  totalPages,
-  totalProjects,
-  startIndex,
-  onPageChange,
-}: ProjectPaginationProps) => {
-  const endIndex = Math.min(
-    startIndex + 4,
-    totalProjects,
-  );
+const ProjectPagination = ({ currentPage, totalPages, totalProjects, startIndex, onPageChange, }: ProjectPaginationProps) => {
+  const endIndex = Math.min(startIndex + 4, totalProjects,);
 
   return (
     <>
@@ -50,11 +41,10 @@ const ProjectPagination = ({
               key={page}
               type="button"
               onClick={() => onPageChange(page)}
-              className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-sm font-medium transition-all ${
-                currentPage === page
+              className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-sm font-medium transition-all ${currentPage === page
                   ? "bg-foreground text-background"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              }`}
+                }`}
             >
               {page}
             </button>

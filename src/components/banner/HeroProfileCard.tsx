@@ -15,12 +15,12 @@ const socialLinks = [
     icon: FaGithub,
   },
   {
-    href: "#",
+    href: "https://www.linkedin.com/in/tfshorifulislam",
     label: "LinkedIn",
     icon: FaLinkedinIn,
   },
   {
-    href: "#",
+    href: "https://www.instagram.com/tfshorifulislam",
     label: "Instagram",
     icon: FaInstagram,
   },
