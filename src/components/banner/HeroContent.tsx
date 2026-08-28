@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 
 const stats = [
   {
@@ -20,7 +21,12 @@ const stats = [
 
 const HeroContent = () => {
   return (
-    <div className="w-full text-center lg:text-left max-w-3xl">
+    <motion.div
+      initial={{ opacity: 0, x: 70, y: 8, scale: 0.96 }}
+      animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], }}
+
+      className="w-full text-center lg:text-left max-w-3xl">
 
       <div className="mb-7 flex items-center justify-center gap-3 lg:justify-start">
 
@@ -94,7 +100,7 @@ const HeroContent = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

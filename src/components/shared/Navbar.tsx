@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ModeToggle } from "../theme/ModeToggle";
 import { MobileNavbar } from "./MobileNavbar";
 import { FaGithub } from "react-icons/fa";
+import { motion } from "motion/react";
 
 const navItems = [
     { name: "Home", href: "#home" },
@@ -16,7 +17,12 @@ const navItems = [
 
 const Navbar = () => {
     return (
-        <header className="fixed top-4 left-1/2 z-50 w-full max-w-7xl -translate-x-1/2 px-6 lg:px-8">
+        <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], }}
+
+            className="fixed top-4 left-1/2 z-50 w-full max-w-7xl -translate-x-1/2 px-6 lg:px-8">
             <nav className="flex h-16 items-center justify-between rounded-full border bg-background/80 px-5 shadow-lg backdrop-blur-xl ">
 
                 {/* Logo */}
@@ -61,7 +67,7 @@ const Navbar = () => {
 
                 </div>
             </nav>
-        </header>
+        </motion.div>
     );
 };
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub, FaInstagram, FaLinkedinIn, } from "react-icons/fa";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { motion } from "motion/react";
 
 const socialLinks = [
