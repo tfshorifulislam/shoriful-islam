@@ -16,8 +16,8 @@ const navItems = [
 
 const Navbar = () => {
     return (
-        <header className="fixed top-4 left-1/2 z-50 w-[95%] max-w-7xl -translate-x-1/2">
-            <nav className="flex h-16 items-center justify-between rounded-full border bg-background/80 px-5 shadow-lg backdrop-blur-xl">
+        <header className="fixed top-4 left-1/2 z-50 w-full max-w-7xl -translate-x-1/2 px-6 lg:px-8">
+            <nav className="flex h-16 items-center justify-between rounded-full border bg-background/80 px-5 shadow-lg backdrop-blur-xl ">
 
                 {/* Logo */}
                 <Link
