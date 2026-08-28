@@ -1,4 +1,5 @@
 import HeroSection from "@/components/banner/HeroSection";
+import SkillsSection from "@/components/skills/SkillsSection";
 
 
 const HomePage = () => {
@@ -6,7 +7,9 @@ const HomePage = () => {
     <div>
 
       <HeroSection />
-      
+
+      <SkillsSection/>
+
     </div>
   );
 };
