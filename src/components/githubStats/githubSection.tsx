@@ -58,32 +58,29 @@ const GithubSection = () => {
   }, []);
 
   return (
-    <section
-      id="github-stats"
-      className="relative py-16 sm:py-20 md:py-28 lg:py-32"
-    >
+    <section id="github-stats" className="relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 sm:mb-10 md:mb-12">
-          <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-foreground sm:w-10" />
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-10 bg-green-600 dark:bg-green-400" />
 
-            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground sm:text-xs sm:tracking-[0.3em]">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-green-600 dark:text-green-400">
               GitHub
             </span>
           </div>
 
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-4xl font-black leading-[0.95] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-7xl">
-                Open
-                <span className="block text-muted-foreground">
-                  source.
+              <h2 className="text-4xl font-black leading-[0.92] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-7xl">
+                Code I
+                <span className="block text-green-600 dark:text-green-400">
+                  contribute.
                 </span>
               </h2>
 
-              <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                Explore my open-source work, contributions, and
+              <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+                A look at my open-source contributions, repositories, and
                 development activity on GitHub.
               </p>
             </div>
@@ -92,7 +89,22 @@ const GithubSection = () => {
               href="https://github.com/tfshorifulislam"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2.5 text-xs font-semibold transition-all hover:bg-muted sm:px-5 sm:py-3 sm:text-sm"
+              className="
+                group inline-flex w-fit items-center gap-2
+                rounded-full
+                border border-green-600/20
+                px-4 py-2.5
+                text-xs font-semibold
+                transition-all
+                hover:border-green-600/40
+                hover:bg-green-600/5
+                hover:text-green-700
+                sm:px-5 sm:py-3 sm:text-sm
+                dark:border-green-400/20
+                dark:hover:border-green-400/40
+                dark:hover:bg-green-400/5
+                dark:hover:text-green-300
+              "
             >
               <FaGithub className="h-4 w-4" />
 
@@ -160,44 +172,44 @@ const GithubSection = () => {
 
             {/* Graph */}
             <div className="w-full overflow-hidden">
-              <div className="flex w-full items-stretch justify-between gap-0.5 sm:gap-0.5">
+              <div className="flex w-full items-stretch justify-between gap-0.5">
                 {loading
                   ? Array.from({ length: 52 }).map(
-                      (_, weekIndex) => (
-                        <div
-                          key={weekIndex}
-                          className="flex min-w-0 flex-1 flex-col gap-0.5 sm:gap-0.5"
-                        >
-                          {Array.from({ length: 7 }).map(
-                            (_, dayIndex) => (
-                              <div
-                                key={dayIndex}
-                                className="aspect-square w-full rounded-xs bg-muted"
-                              />
-                            ),
-                          )}
-                        </div>
-                      ),
-                    )
-                  : data?.weeks.map((week, weekIndex) => (
+                    (_, weekIndex) => (
                       <div
                         key={weekIndex}
-                        className="flex min-w-0 flex-1 flex-col gap-0.5 sm:gap-0.5"
+                        className="flex min-w-0 flex-1 flex-col gap-0.5"
                       >
-                        {week.contributionDays.map(
-                          (day) => (
+                        {Array.from({ length: 7 }).map(
+                          (_, dayIndex) => (
                             <div
-                              key={day.date}
-                              title={`${day.contributionCount} contributions on ${day.date}`}
-                              className="aspect-square w-full rounded-xs"
-                              style={{
-                                backgroundColor: day.color,
-                              }}
+                              key={dayIndex}
+                              className="aspect-square w-full rounded-xs bg-muted"
                             />
                           ),
                         )}
                       </div>
-                    ))}
+                    ),
+                  )
+                  : data?.weeks.map((week, weekIndex) => (
+                    <div
+                      key={weekIndex}
+                      className="flex min-w-0 flex-1 flex-col gap-0.5"
+                    >
+                      {week.contributionDays.map(
+                        (day) => (
+                          <div
+                            key={day.date}
+                            title={`${day.contributionCount} contributions on ${day.date}`}
+                            className="aspect-square w-full rounded-xs"
+                            style={{
+                              backgroundColor: day.color,
+                            }}
+                          />
+                        ),
+                      )}
+                    </div>
+                  ))}
               </div>
             </div>
 
@@ -209,13 +221,9 @@ const GithubSection = () => {
 
               <div className="flex items-center gap-0.75">
                 <span className="h-2.5 w-2.5 rounded-xs border bg-muted sm:h-3 sm:w-3" />
-
                 <span className="h-2.5 w-2.5 rounded-xs bg-[#9be9a8] sm:h-3 sm:w-3" />
-
                 <span className="h-2.5 w-2.5 rounded-xs bg-[#40c463] sm:h-3 sm:w-3" />
-
                 <span className="h-2.5 w-2.5 rounded-xs bg-[#30a14e] sm:h-3 sm:w-3" />
-
                 <span className="h-2.5 w-2.5 rounded-xs bg-[#216e39] sm:h-3 sm:w-3" />
               </div>
 
@@ -242,9 +250,7 @@ const Stat = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={`min-w-0 p-4 sm:p-5 md:p-6 ${className}`}
-    >
+    <div className={`min-w-0 p-4 sm:p-5 md:p-6 ${className}`}>
       <div className="mb-2 flex min-w-0 items-center gap-2 text-muted-foreground sm:mb-3">
         {icon}
 
