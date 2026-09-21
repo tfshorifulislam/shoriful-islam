@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Home,
   User,
   Code2,
   FolderGit2,
@@ -24,7 +23,6 @@ import {
 } from "@/components/ui/sidebar";
 
 const navItems = [
-  { title: "Home", href: "#home", icon: Home },
   { title: "About", href: "#about", icon: User },
   { title: "Skills", href: "#skills", icon: Code2 },
   { title: "Projects", href: "#projects", icon: FolderGit2 },
