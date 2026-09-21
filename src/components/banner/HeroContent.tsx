@@ -22,11 +22,20 @@ const stats = [
 const HeroContent = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 70, y: 8, scale: 0.96 }}
-      animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+      initial={{
+        opacity: 0,
+        y: 30,
+        clipPath: "inset(8% 0 0 0)",
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        clipPath: "inset(0% 0 0 0)",
+      }}
       transition={{
         duration: 1,
-        ease: [0.16, 1, 0.3, 1],
+        delay: 0.15,
+        ease: [0.22, 1, 0.36, 1],
       }}
       className="w-full max-w-3xl text-center lg:text-left"
     >
@@ -58,28 +67,26 @@ const HeroContent = () => {
 
       {/* Buttons */}
       <div className="mt-9 flex flex-wrap items-center justify-center gap-3.5 lg:justify-start">
-        {/* View Projects */}
         <Link
           href="#projects"
-          className="group inline-flex h-12 items-center gap-2 rounded-full bg-green-600 px-6 text-sm font-semibold text-white shadow-lg shadow-green-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-700 hover:shadow-xl hover:shadow-green-600/25 dark:bg-green-500 dark:hover:bg-green-400 dark:hover:text-black"
+          className="group inline-flex h-12 items-center gap-2 rounded-full bg-green-600 px-6 text-sm font-semibold text-white shadow-lg shadow-green-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-400 dark:hover:text-black"
         >
           View Projects
 
           <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </Link>
 
-        {/* Resume */}
         <a
           href="https://drive.google.com/file/d/1uwRbhBoJpNHJAonmbq4DwjyeVQi3oPxa/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex h-12 items-center gap-2 rounded-full border border-border bg-background px-6 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:border-green-600 hover:text-green-600 hover:shadow-lg hover:shadow-green-600/10 dark:hover:border-green-400 dark:hover:text-green-400"
+          className="group inline-flex h-12 items-center gap-2 rounded-full border border-border bg-background px-6 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:border-green-600 hover:text-green-600 dark:hover:border-green-400 dark:hover:text-green-400"
         >
-          <FileText className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+          <FileText className="h-4 w-4" />
 
           Resume
 
-          <ArrowUpRight className="h-3.5 w-3.5 opacity-60 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
+          <ArrowUpRight className="h-3.5 w-3.5 opacity-60 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </a>
       </div>
 
