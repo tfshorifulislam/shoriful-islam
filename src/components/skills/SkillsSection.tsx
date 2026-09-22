@@ -85,8 +85,8 @@ const SkillsSection = () => {
             </span>
           </div>
 
-          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-            <h2 className="max-w-3xl text-4xl font-black leading-[0.9] tracking-tighter sm:text-5xl md:text-6xl">
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <h2 className="max-w-3xl uppercase text-4xl font-black leading-[0.9] tracking-tighter sm:text-5xl md:text-6xl">
               <span className="text-foreground">
                 Everything I use to
               </span>
