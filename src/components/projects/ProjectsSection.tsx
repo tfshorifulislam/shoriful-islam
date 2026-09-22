@@ -132,7 +132,7 @@ const ProjectsSection = () => {
     };
 
     return (
-        <section id="projects" className="relative">
+        <section id="projects" className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 mt-30">
             {/* Section Header */}
             <ProjectHeader />
 

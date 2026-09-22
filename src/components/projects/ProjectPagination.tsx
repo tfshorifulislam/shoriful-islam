@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -10,8 +11,14 @@ interface ProjectPaginationProps {
   onPageChange: (page: number) => void;
 }
 
-const ProjectPagination = ({ currentPage, totalPages, totalProjects, startIndex, onPageChange, }: ProjectPaginationProps) => {
-  const endIndex = Math.min(startIndex + 4, totalProjects,);
+const ProjectPagination = ({
+  currentPage,
+  totalPages,
+  totalProjects,
+  startIndex,
+  onPageChange,
+}: ProjectPaginationProps) => {
+  const endIndex = Math.min(startIndex + 4, totalProjects);
 
   return (
     <>
@@ -22,7 +29,7 @@ const ProjectPagination = ({ currentPage, totalPages, totalProjects, startIndex,
           type="button"
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-muted disabled:pointer-events-none disabled:opacity-30"
+          className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 px-4 py-2.5 text-sm font-medium text-emerald-600 transition-colors hover:border-emerald-500 hover:bg-emerald-500 hover:text-white disabled:pointer-events-none disabled:opacity-30 dark:border-emerald-400/20 dark:text-emerald-400"
         >
           <ChevronLeft className="h-4 w-4" />
 
@@ -41,10 +48,11 @@ const ProjectPagination = ({ currentPage, totalPages, totalProjects, startIndex,
               key={page}
               type="button"
               onClick={() => onPageChange(page)}
-              className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-sm font-medium transition-all ${currentPage === page
-                  ? "bg-foreground text-background"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                }`}
+              className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-sm font-medium transition-all ${
+                currentPage === page
+                  ? "bg-emerald-600 text-white hover:bg-emerald-500"
+                  : "text-emerald-600 hover:bg-emerald-500 hover:text-white dark:text-emerald-400"
+              }`}
             >
               {page}
             </button>
@@ -56,7 +64,7 @@ const ProjectPagination = ({ currentPage, totalPages, totalProjects, startIndex,
           type="button"
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-muted disabled:pointer-events-none disabled:opacity-30"
+          className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 px-4 py-2.5 text-sm font-medium text-emerald-600 transition-colors hover:border-emerald-500 hover:bg-emerald-500 hover:text-white disabled:pointer-events-none disabled:opacity-30 dark:border-emerald-400/20 dark:text-emerald-400"
         >
           <span className="hidden sm:inline">
             Next
@@ -68,7 +76,7 @@ const ProjectPagination = ({ currentPage, totalPages, totalProjects, startIndex,
 
       {/* Counter */}
       <div className="pb-12 text-center">
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400">
           {startIndex + 1}–{endIndex} of {totalProjects}
         </p>
       </div>
