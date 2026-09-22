@@ -7,38 +7,65 @@ import {
   Server,
 } from "lucide-react";
 
+
 const skillGroups = [
   {
     title: "Frontend",
-    description: "Building modern and responsive user interfaces.",
+    description: "Building modern, responsive, and user-focused interfaces.",
     icon: Code2,
     skills: [
       "HTML",
       "CSS",
-      "Tailwind CSS",
       "JavaScript",
       "TypeScript",
       "React.js",
       "Next.js",
+      "Tailwind CSS",
+      "shadcn/ui",
     ],
   },
+
   {
     title: "Backend",
-    description: "Building APIs and scalable server-side applications.",
+    description: "Building secure APIs and scalable server-side applications.",
     icon: Server,
-    skills: ["Node.js", "Express.js"],
+    skills: [
+      "Node.js",
+      "Express.js",
+      "REST API",
+      "Authentication",
+      "RBAC",
+      "Redis",
+      "Socket.IO",
+    ],
   },
+
   {
     title: "Database",
-    description: "Working with relational and NoSQL databases.",
+    description: "Designing and working with relational and NoSQL databases.",
     icon: Database,
-    skills: ["MongoDB", "PostgreSQL", "Prisma"],
+    skills: [
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma",
+      "Database Design",
+      "Indexing",
+    ],
   },
+
   {
-    title: "Tools & Design",
-    description: "Development workflow, UI design and visual tools.",
+    title: "Tools & Services",
+    description: "Working with modern development tools and third-party services.",
     icon: Palette,
-    skills: ["Git", "GitHub", "Figma", "Photoshop", "Illustrator"],
+    skills: [
+      "Git",
+      "GitHub",
+      "Figma",
+      "Stripe",
+      "AI Integration",
+      "Postman",
+      "Vercel",
+    ],
   },
 ];
 
