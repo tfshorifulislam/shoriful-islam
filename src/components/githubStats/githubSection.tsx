@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -65,48 +64,46 @@ const GithubSection = () => {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-8 sm:mb-10 md:mb-12">
-          <div className="mb-3 flex items-center gap-3">
-            <span className="h-px w-8 bg-emerald-600 dark:bg-emerald-400 sm:w-10" />
+        <div className="mb-8 flex flex-col gap-6 md:mb-10 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-10 bg-emerald-500" />
 
-            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-emerald-600 dark:text-emerald-400 sm:text-xs sm:tracking-[0.3em]">
-              GitHub
-            </span>
-          </div>
-
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h2 className="text-4xl font-black leading-[0.9] tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                <span className="text-foreground">
-                  Code
-                </span>
-
-                <span className="block text-emerald-600 dark:text-emerald-400">
-                  contributions.
-                </span>
-              </h2>
-
-              <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                A snapshot of my open-source activity, projects,
-                and contributions on GitHub.
-              </p>
+              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">
+                GitHub
+              </span>
             </div>
 
-            <Link
-              href="https://github.com/tfshorifulislam"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex w-fit items-center gap-2 rounded-full border border-emerald-600/25 px-4 py-2.5 text-xs font-semibold text-emerald-600 transition-colors hover:border-emerald-500 hover:bg-emerald-500 hover:text-white dark:border-emerald-400/25 dark:text-emerald-400 sm:px-5 sm:py-3 sm:text-sm"
-            >
-              <FaGithub className="h-4 w-4" />
-
-              <span>
-                @{data?.username ?? "tfshorifulislam"}
+            <h2 className="text-4xl font-black uppercase leading-[0.9] tracking-[-0.05em] sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="text-foreground">
+                Code
               </span>
 
-              <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
-            </Link>
+              <span className="block text-emerald-600 dark:text-emerald-400">
+                contributions.
+              </span>
+            </h2>
+
+            <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+              A snapshot of my open-source activity, projects,
+              and contributions on GitHub.
+            </p>
           </div>
+
+          <Link
+            href="https://github.com/tfshorifulislam"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex w-fit items-center gap-2 rounded-full border border-emerald-600/25 px-4 py-2.5 text-xs font-semibold text-emerald-600 transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/10 dark:border-emerald-400/25 dark:text-emerald-400 sm:px-5 sm:py-3 sm:text-sm"
+          >
+            <FaGithub className="h-4 w-4" />
+
+            <span>
+              @{data?.username ?? "tfshorifulislam"}
+            </span>
+
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
+          </Link>
         </div>
 
         {/* Main Card */}
@@ -146,11 +143,15 @@ const GithubSection = () => {
             {/* Contribution Header */}
             <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-sm font-semibold sm:text-base">
-                  Contribution activity
-                </p>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
 
-                <p className="mt-1 text-xs leading-5 text-muted-foreground sm:text-sm">
+                  <p className="text-sm font-semibold sm:text-base">
+                    Contribution activity
+                  </p>
+                </div>
+
+                <p className="mt-1 pl-3.5 text-xs leading-5 text-muted-foreground sm:text-sm">
                   {loading
                     ? "Loading contribution data..."
                     : `${data?.totalContributions ?? 0} contributions in the last year`}
@@ -193,7 +194,7 @@ const GithubSection = () => {
                             <div
                               key={day.date}
                               title={`${day.contributionCount} contributions on ${day.date}`}
-                              className="aspect-square w-full rounded-xs"
+                              className="aspect-square w-full rounded-xs transition-opacity hover:opacity-70"
                               style={{
                                 backgroundColor: day.color,
                               }}
@@ -214,13 +215,13 @@ const GithubSection = () => {
               <div className="flex items-center gap-0.75">
                 <span className="h-2.5 w-2.5 rounded-xs border bg-muted sm:h-3 sm:w-3" />
 
-                <span className="h-2.5 w-2.5 rounded-xs bg-[#9be9a8] sm:h-3 sm:w-3" />
+                <span className="h-2.5 w-2.5 rounded-xs bg-emerald-200 sm:h-3 sm:w-3" />
 
-                <span className="h-2.5 w-2.5 rounded-xs bg-[#40c463] sm:h-3 sm:w-3" />
+                <span className="h-2.5 w-2.5 rounded-xs bg-emerald-400 sm:h-3 sm:w-3" />
 
-                <span className="h-2.5 w-2.5 rounded-xs bg-[#30a14e] sm:h-3 sm:w-3" />
+                <span className="h-2.5 w-2.5 rounded-xs bg-emerald-600 sm:h-3 sm:w-3" />
 
-                <span className="h-2.5 w-2.5 rounded-xs bg-[#216e39] sm:h-3 sm:w-3" />
+                <span className="h-2.5 w-2.5 rounded-xs bg-emerald-800 sm:h-3 sm:w-3" />
               </div>
 
               <span className="text-[10px] text-muted-foreground sm:text-xs">
@@ -249,8 +250,10 @@ const Stat = ({
     <div
       className={`min-w-0 p-4 sm:p-5 md:p-6 ${className}`}
     >
-      <div className="mb-2 flex min-w-0 items-center gap-2 text-emerald-600 dark:text-emerald-400 sm:mb-3">
-        {icon}
+      <div className="mb-2 flex min-w-0 items-center gap-2 sm:mb-3">
+        <span className="text-emerald-600 dark:text-emerald-400">
+          {icon}
+        </span>
 
         <span className="truncate text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground sm:text-[10px] sm:tracking-[0.18em]">
           {label}

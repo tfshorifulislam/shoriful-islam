@@ -35,7 +35,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
     <div
       ref={cardRef}
-      className="sticky top-0 flex h-screen items-center justify-center px-4 sm:px-6 lg:px-8"
+      className="sticky top-[10vh] flex min-h-[700px] items-center justify-center px-4 py-10 sm:px-6 md:min-h-[650px] lg:px-8"
     >
       <motion.article
         style={{
@@ -64,7 +64,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         {/* Project Content */}
         <div className="flex w-full flex-1 flex-col justify-between px-2 py-5 sm:px-4 md:w-1/2 md:px-8 md:py-4 lg:px-10">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-600 dark:text-emerald-400">
               Project {String(project.id).padStart(2, "0")}
             </p>
 
@@ -83,7 +83,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border bg-muted/40 px-3 py-1.5 text-xs font-medium text-muted-foreground"
+                  className="rounded-full border border-emerald-500/15 bg-emerald-500/5 px-3 py-1.5 text-xs font-medium text-muted-foreground"
                 >
                   {tech}
                 </span>
@@ -96,7 +96,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" relative z-20 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-opacity hover:opacity-80"
+                className="relative z-20 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
               >
                 Live Project
                 <ArrowUpRight className="h-4 w-4" />
@@ -106,7 +106,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative z-20 inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-colors hover:bg-muted"
+                className="relative z-20 inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-colors hover:border-emerald-500/40 hover:bg-emerald-500/5"
               >
                 <FaGithub className="h-4 w-4" />
                 GitHub
