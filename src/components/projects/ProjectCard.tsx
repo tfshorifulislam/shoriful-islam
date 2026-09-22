@@ -35,7 +35,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
     <div
       ref={cardRef}
-      className="sticky top-[10vh] flex min-h-[700px] items-center justify-center px-4 py-10 sm:px-6 md:min-h-[650px] lg:px-8"
+      className="sticky top-[10vh] flex min-h-175 items-center justify-center px-4 py-10 sm:px-6 md:min-h-162.5 lg:px-8"
     >
       <motion.article
         style={{
@@ -43,7 +43,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           top: `${index * 20}px`,
           zIndex: index + 1,
         }}
-        className="relative flex h-[650px] w-full max-w-6xl flex-col overflow-hidden rounded-[30px] border bg-card p-3 shadow-2xl sm:p-5 md:h-[580px] md:flex-row md:p-6 lg:p-8"
+        className="relative flex h-162.5 w-full max-w-7xl flex-col overflow-hidden rounded-[30px] border bg-card p-3 sm:p-5 md:h-145 md:flex-row md:p-6 lg:p-8"
       >
         {/* Project Image */}
         <div className="relative h-[45%] w-full overflow-hidden rounded-[22px] bg-muted md:h-full md:w-1/2">

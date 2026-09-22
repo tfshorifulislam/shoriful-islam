@@ -31,7 +31,7 @@ const HeroProfileCard = () => {
     <motion.div
       initial={{ opacity: 0, x: -60, scale: 0.96 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
-      transition={{duration: 0.8, ease: [0.22, 1, 0.36, 1], }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], }}
 
       className="w-full max-w-95 overflow-hidden rounded-lg border bg-card p-3">
       <CardContent className="p-0">

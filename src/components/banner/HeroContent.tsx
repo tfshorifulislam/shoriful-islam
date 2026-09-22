@@ -34,7 +34,7 @@ const HeroContent = () => {
         <span className="h-px w-12 bg-emerald-500" />
 
         <span className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400 sm:text-sm">
-          Hello, I'm Shoriful
+          Hello, I'm Shoriful Islam
         </span>
       </div>
 
