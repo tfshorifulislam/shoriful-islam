@@ -46,7 +46,7 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8"
+      className="mx-auto w-full max-w-7xl px-6 lg:px-8"
     >
       {/* Header */}
       <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">

@@ -33,10 +33,10 @@ const HeroProfileCard = () => {
       animate={{ opacity: 1, x: 0, scale: 1 }}
       transition={{duration: 0.8, ease: [0.22, 1, 0.36, 1], }}
 
-      className="w-full max-w-95 overflow-hidden rounded-[28px] border bg-card p-3">
+      className="w-full max-w-95 overflow-hidden rounded-lg border bg-card p-3">
       <CardContent className="p-0">
 
-        <div className="relative aspect-4/5 overflow-hidden rounded-[22px] bg-muted">
+        <div className="relative aspect-4/5 overflow-hidden rounded-lg bg-muted">
           <Image
             src="/pic.png"
             alt="Shoriful Islam"
