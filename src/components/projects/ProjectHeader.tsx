@@ -2,7 +2,7 @@ import React from "react";
 
 const ProjectHeader = () => {
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-6 pt-20 sm:px-6 md:pb-8 md:pt-28 lg:px-8">
+    <div className="mx-auto max-w-7xl pb-6 pt-20 md:pb-8 md:pt-28 ">
       <div className="mb-4 flex items-center gap-3">
         <span className="h-px w-10 bg-emerald-500" />
 

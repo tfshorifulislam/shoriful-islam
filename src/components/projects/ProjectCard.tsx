@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll } from "motion/react";
 import { useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 
@@ -25,30 +25,28 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
+  useScroll({
     target: cardRef,
     offset: ["start end", "start start"],
   });
 
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [1, 0.96]
-  );
-
   return (
     <div
       ref={cardRef}
-      className="sticky top-[10vh] flex min-h-175 items-center justify-center px-4 py-10 sm:px-6 md:min-h-162.5 lg:px-8"
+      className="sticky top-[10vh] flex min-h-175 w-full items-center justify-center py-10 md:min-h-162.5"
     >
       <motion.article
         style={{
-          scale,
           top: `${index * 50}px`,
           zIndex: index + 1,
         }}
-        className="group relative flex h-162.5 w-full max-w-7xl flex-col overflow-hidden rounded-[30px] border border-border/70 bg-card p-2 shadow-xl shadow-black/5 sm:p-3 md:h-145 md:flex-row md:p-4 lg:p-5"
+        className="group relative flex h-162.5 w-full flex-col overflow-hidden rounded-[30px] border border-border/70 bg-card p-2 shadow-xl shadow-black/5 md:h-145 md:flex-row"
       >
+        {/* Project Number */}
+        <div className="absolute right-5 top-5 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-border/60 bg-background/80 text-xs font-bold text-foreground backdrop-blur-xl">
+          {String(project.id).padStart(2, "0")}
+        </div>
+
         {/* Glow */}
         <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl transition-all duration-700 group-hover:bg-emerald-500/15" />
 
@@ -63,13 +61,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           />
 
-          {/* Image Gradient */}
           <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/5 to-transparent" />
-
-          {/* Project Number */}
-          <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/40 text-xs font-bold text-white backdrop-blur-xl">
-            {String(project.id).padStart(2, "0")}
-          </div>
 
           {/* View Project */}
           <Link
@@ -126,19 +118,17 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
             {/* Actions */}
             <div className="flex flex-wrap items-center gap-3">
-              {/* Live Project */}
               <Link
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/button inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-600/25"
+                className="group/button inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700"
               >
                 Live Project
 
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/button:-translate-y-0.5 group-hover/button:translate-x-0.5" />
               </Link>
 
-              {/* GitHub */}
               <Link
                 href={project.github}
                 target="_blank"

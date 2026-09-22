@@ -137,20 +137,20 @@ const ProjectsSection = () => {
     };
 
     return (
-        <section id="projects" className="relative px-6 lg:px-8">
+        <section id="projects" className="relative px-6 lg:px-8 max-w-7xl mx-auto">
             {/* Header */}
             <ProjectHeader />
 
             {/* Project Cards */}
-            <div className="relative">
-                {currentProjects.map((project, index) => (
-                    <ProjectCard
-                        key={project.id}
-                        project={project}
-                        index={index}
-                    />
-                ))}
-            </div>
+           <div className="mx-auto w-full max-w-7xl">
+  {currentProjects.map((project, index) => (
+    <ProjectCard
+      key={project.id}
+      project={project}
+      index={index}
+    />
+  ))}
+</div>
 
             {/* Pagination */}
             <div className="mt-24">
