@@ -28,13 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(
-        "h-full",
-        "antialiased",
-        inter.className,
-        "font-sans",
-        geist.variable
-      )}
+      className={cn(  inter.className, )}
     >
       <body className="min-h-full bg-[#f7f7fa] dark:bg-[#08080a] overflow-x-clip">
         <ThemeProvider
