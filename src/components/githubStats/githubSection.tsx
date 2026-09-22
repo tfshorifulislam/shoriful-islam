@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -60,31 +61,34 @@ const GithubSection = () => {
   return (
     <section
       id="github-stats"
-      className="relative py-16 sm:py-20 md:py-28 lg:py-32"
+      className="relative py-16 sm:py-20 md:py-24 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 sm:mb-10 md:mb-12">
-          <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-foreground sm:w-10" />
+          <div className="mb-3 flex items-center gap-3">
+            <span className="h-px w-8 bg-emerald-600 dark:bg-emerald-400 sm:w-10" />
 
-            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground sm:text-xs sm:tracking-[0.3em]">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-emerald-600 dark:text-emerald-400 sm:text-xs sm:tracking-[0.3em]">
               GitHub
             </span>
           </div>
 
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-4xl font-black leading-[0.95] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-7xl">
-                Open
-                <span className="block text-muted-foreground">
-                  source.
+              <h2 className="text-4xl font-black leading-[0.9] tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                <span className="text-foreground">
+                  Code
+                </span>
+
+                <span className="block text-emerald-600 dark:text-emerald-400">
+                  contributions.
                 </span>
               </h2>
 
               <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                Explore my open-source work, contributions, and
-                development activity on GitHub.
+                A snapshot of my open-source activity, projects,
+                and contributions on GitHub.
               </p>
             </div>
 
@@ -92,7 +96,7 @@ const GithubSection = () => {
               href="https://github.com/tfshorifulislam"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2.5 text-xs font-semibold transition-all hover:bg-muted sm:px-5 sm:py-3 sm:text-sm"
+              className="group inline-flex w-fit items-center gap-2 rounded-full border border-emerald-600/25 px-4 py-2.5 text-xs font-semibold text-emerald-600 transition-colors hover:border-emerald-500 hover:bg-emerald-500 hover:text-white dark:border-emerald-400/25 dark:text-emerald-400 sm:px-5 sm:py-3 sm:text-sm"
             >
               <FaGithub className="h-4 w-4" />
 
@@ -106,7 +110,7 @@ const GithubSection = () => {
         </div>
 
         {/* Main Card */}
-        <div className="overflow-hidden rounded-[24px] border bg-card shadow-xl sm:rounded-[30px]">
+        <div className="overflow-hidden rounded-2xl border bg-card sm:rounded-3xl">
           {/* Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4">
             <Stat
@@ -138,7 +142,7 @@ const GithubSection = () => {
           </div>
 
           {/* Contribution Section */}
-          <div className="p-4 sm:p-6 md:p-8 lg:p-10">
+          <div className="border-t p-4 sm:p-6 md:p-8 lg:p-10">
             {/* Contribution Header */}
             <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
@@ -160,13 +164,13 @@ const GithubSection = () => {
 
             {/* Graph */}
             <div className="w-full overflow-hidden">
-              <div className="flex w-full items-stretch justify-between gap-0.5 sm:gap-0.5">
+              <div className="flex w-full items-stretch justify-between gap-0.5">
                 {loading
                   ? Array.from({ length: 52 }).map(
                       (_, weekIndex) => (
                         <div
                           key={weekIndex}
-                          className="flex min-w-0 flex-1 flex-col gap-0.5 sm:gap-0.5"
+                          className="flex min-w-0 flex-1 flex-col gap-0.5"
                         >
                           {Array.from({ length: 7 }).map(
                             (_, dayIndex) => (
@@ -182,7 +186,7 @@ const GithubSection = () => {
                   : data?.weeks.map((week, weekIndex) => (
                       <div
                         key={weekIndex}
-                        className="flex min-w-0 flex-1 flex-col gap-0.5 sm:gap-0.5"
+                        className="flex min-w-0 flex-1 flex-col gap-0.5"
                       >
                         {week.contributionDays.map(
                           (day) => (
@@ -245,10 +249,10 @@ const Stat = ({
     <div
       className={`min-w-0 p-4 sm:p-5 md:p-6 ${className}`}
     >
-      <div className="mb-2 flex min-w-0 items-center gap-2 text-muted-foreground sm:mb-3">
+      <div className="mb-2 flex min-w-0 items-center gap-2 text-emerald-600 dark:text-emerald-400 sm:mb-3">
         {icon}
 
-        <span className="truncate text-[9px] font-semibold uppercase tracking-[0.12em] sm:text-[10px] sm:tracking-[0.18em]">
+        <span className="truncate text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground sm:text-[10px] sm:tracking-[0.18em]">
           {label}
         </span>
       </div>
