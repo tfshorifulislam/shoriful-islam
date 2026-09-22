@@ -40,7 +40,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       <motion.article
         style={{
           scale,
-          top: `${index * 20}px`,
+          top: `${index * 70}px`,
           zIndex: index + 1,
         }}
         className="relative flex h-162.5 w-full max-w-7xl flex-col overflow-hidden rounded-[30px] border bg-card p-3 sm:p-5 md:h-145 md:flex-row md:p-6 lg:p-8"
