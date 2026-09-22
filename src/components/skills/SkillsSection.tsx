@@ -49,19 +49,19 @@ const SkillsSection = () => {
       className="mx-auto w-full max-w-7xl px-6 lg:px-8"
     >
       {/* Header */}
-      <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
+      <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-center md:justify-between">
         <div>
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-10 bg-foreground" />
+            <span className="h-px w-10 bg-emerald-600 dark:bg-emerald-400" />
 
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">
               Skills
             </span>
           </div>
 
           <h2 className="max-w-2xl text-4xl font-black leading-[0.95] tracking-tighter sm:text-5xl md:text-6xl">
-            Tools I use to
-            <span className="block text-muted-foreground">
+            Tools I use to{" "}
+            <span className="text-emerald-600 dark:text-emerald-400">
               build digital products.
             </span>
           </h2>
@@ -81,15 +81,15 @@ const SkillsSection = () => {
           return (
             <div
               key={group.title}
-              className="group relative overflow-hidden rounded-[28px] border bg-card p-6 transition-colors duration-300 hover:bg-muted/40 sm:p-7"
+              className="group relative overflow-hidden rounded-[28px] border bg-card p-6 transition-all duration-300 hover:border-emerald-500/40 hover:bg-muted/40 sm:p-7"
             >
               {/* Number */}
-              <span className="absolute right-6 top-5 text-xs font-medium text-muted-foreground/50">
+              <span className="absolute right-6 top-5 text-xs font-medium text-emerald-600/40 dark:text-emerald-400/40">
                 0{index + 1}
               </span>
 
               {/* Icon */}
-              <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full border">
+              <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full border border-emerald-600/30 bg-emerald-600/5 text-emerald-600 transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white dark:border-emerald-400/30 dark:bg-emerald-400/5 dark:text-emerald-400">
                 <Icon className="h-5 w-5" />
               </div>
 
@@ -108,7 +108,7 @@ const SkillsSection = () => {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border bg-background px-3.5 py-2 text-xs font-medium transition-colors duration-300 group-hover:border-foreground/20"
+                    className="rounded-full border border-emerald-600/20 bg-emerald-600/5 px-3.5 py-2 text-xs font-medium text-emerald-600 transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white dark:border-emerald-400/20 dark:bg-emerald-400/5 dark:text-emerald-400"
                   >
                     {skill}
                   </span>
@@ -120,9 +120,9 @@ const SkillsSection = () => {
       </div>
 
       {/* Core Stack */}
-      <div className="mt-4 border-y py-4 sm:py-5">
+      <div className="mt-4 border-y border-emerald-600/20 py-4 sm:py-5 dark:border-emerald-400/20">
         <div className="flex items-center justify-center gap-1.5 sm:gap-2">
-          <span className="shrink-0 text-[8px] font-medium uppercase tracking-[0.12em] text-muted-foreground sm:mr-2 sm:text-xs sm:tracking-[0.2em]">
+          <span className="shrink-0 text-[8px] font-medium uppercase tracking-[0.12em] text-emerald-600 sm:mr-2 sm:text-xs sm:tracking-[0.2em] dark:text-emerald-400">
             Core Stack
           </span>
 
@@ -135,7 +135,7 @@ const SkillsSection = () => {
           ].map((skill) => (
             <span
               key={skill}
-              className="shrink-0 rounded-full bg-foreground px-2 py-1 text-[8px] font-medium text-background sm:px-3 sm:py-1.5 sm:text-xs"
+              className="shrink-0 rounded-full bg-emerald-600 px-2 py-1 text-[8px] font-medium text-white transition-colors duration-300 hover:bg-emerald-500 sm:px-3 sm:py-1.5 sm:text-xs"
             >
               {skill}
             </span>
