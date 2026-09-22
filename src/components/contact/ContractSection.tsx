@@ -10,32 +10,36 @@ import {
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="relative">
+    <section
+      id="contact"
+      className="relative py-20 sm:py-24 md:py-32"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-8 sm:mb-10 md:mb-12">
-          {/* Label */}
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-green-600 dark:bg-green-400" />
+        <div className="mb-10 sm:mb-14">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-10 bg-foreground" />
 
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-green-600 dark:text-green-400">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
               Contact
             </span>
           </div>
 
-          {/* Heading */}
-          <h2 className="max-w-3xl text-4xl font-black leading-[0.92] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-7xl">
-            Let&apos;s
-            <span className="block text-green-600 dark:text-green-400">
-              work together.
-            </span>
-          </h2>
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <h2 className="text-4xl font-black leading-[0.95] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-7xl">
+                Let&apos;s
+                <span className="block text-muted-foreground">
+                  work together.
+                </span>
+              </h2>
 
-          {/* Description */}
-          <p className="mt-6 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-            Have a project in mind or want to discuss an opportunity?
-            Feel free to reach out.
-          </p>
+              <p className="mt-5 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">
+                Have a project in mind or want to discuss an
+                opportunity? Feel free to reach out.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Contact Card */}
@@ -44,43 +48,13 @@ const ContactSection = () => {
             {/* Phone */}
             <Link
               href="tel:+8801628036908"
-              className="
-                group
-                border-b
-                p-6
-                transition-all duration-300
-                hover:bg-green-600/[0.03]
-                sm:p-8
-                md:border-b-0
-                md:border-r
-                lg:p-10
-                dark:hover:bg-green-400/[0.03]
-              "
+              className="group border-b p-6 transition-colors hover:bg-muted/40 sm:p-8 md:border-b-0 md:border-r lg:p-10"
             >
-              <div
-                className="
-                  mb-8
-                  flex h-12 w-12 items-center justify-center
-                  rounded-full
-                  border border-green-600/20
-                  bg-green-600/10
-                  text-green-600
-                  transition-all duration-300
-                  group-hover:border-green-600/40
-                  group-hover:bg-green-600
-                  group-hover:text-white
-                  dark:border-green-400/20
-                  dark:bg-green-400/10
-                  dark:text-green-400
-                  dark:group-hover:border-green-400
-                  dark:group-hover:bg-green-400
-                  dark:group-hover:text-black
-                "
-              >
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-full border bg-background">
                 <Phone className="h-5 w-5" />
               </div>
 
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-600 dark:text-green-400">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 Phone
               </p>
 
@@ -88,7 +62,7 @@ const ContactSection = () => {
                 +880 1628036908
               </p>
 
-              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-muted-foreground transition-colors group-hover:text-green-600 dark:group-hover:text-green-400">
+              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-muted-foreground">
                 Call me
 
                 <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -100,43 +74,13 @@ const ContactSection = () => {
               href="https://wa.me/8801628036908"
               target="_blank"
               rel="noopener noreferrer"
-              className="
-                group
-                border-b
-                p-6
-                transition-all duration-300
-                hover:bg-green-600/[0.03]
-                sm:p-8
-                md:border-b-0
-                md:border-r
-                lg:p-10
-                dark:hover:bg-green-400/[0.03]
-              "
+              className="group border-b p-6 transition-colors hover:bg-muted/40 sm:p-8 md:border-b-0 md:border-r lg:p-10"
             >
-              <div
-                className="
-                  mb-8
-                  flex h-12 w-12 items-center justify-center
-                  rounded-full
-                  border border-green-600/20
-                  bg-green-600/10
-                  text-green-600
-                  transition-all duration-300
-                  group-hover:border-green-600/40
-                  group-hover:bg-green-600
-                  group-hover:text-white
-                  dark:border-green-400/20
-                  dark:bg-green-400/10
-                  dark:text-green-400
-                  dark:group-hover:border-green-400
-                  dark:group-hover:bg-green-400
-                  dark:group-hover:text-black
-                "
-              >
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-full border bg-background">
                 <MessageCircle className="h-5 w-5" />
               </div>
 
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-600 dark:text-green-400">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 WhatsApp
               </p>
 
@@ -144,7 +88,7 @@ const ContactSection = () => {
                 +880 1628036908
               </p>
 
-              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-muted-foreground transition-colors group-hover:text-green-600 dark:group-hover:text-green-400">
+              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-muted-foreground">
                 Message me
 
                 <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -154,40 +98,13 @@ const ContactSection = () => {
             {/* Email */}
             <Link
               href="mailto:tfshorifulislam@gmail.com"
-              className="
-                group
-                p-6
-                transition-all duration-300
-                hover:bg-green-600/[0.03]
-                sm:p-8
-                lg:p-10
-                dark:hover:bg-green-400/[0.03]
-              "
+              className="group p-6 transition-colors hover:bg-muted/40 sm:p-8 lg:p-10"
             >
-              <div
-                className="
-                  mb-8
-                  flex h-12 w-12 items-center justify-center
-                  rounded-full
-                  border border-green-600/20
-                  bg-green-600/10
-                  text-green-600
-                  transition-all duration-300
-                  group-hover:border-green-600/40
-                  group-hover:bg-green-600
-                  group-hover:text-white
-                  dark:border-green-400/20
-                  dark:bg-green-400/10
-                  dark:text-green-400
-                  dark:group-hover:border-green-400
-                  dark:group-hover:bg-green-400
-                  dark:group-hover:text-black
-                "
-              >
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-full border bg-background">
                 <Mail className="h-5 w-5" />
               </div>
 
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-600 dark:text-green-400">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 Email
               </p>
 
@@ -195,7 +112,7 @@ const ContactSection = () => {
                 tfshorifulislam@gmail.com
               </p>
 
-              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-muted-foreground transition-colors group-hover:text-green-600 dark:group-hover:text-green-400">
+              <div className="mt-5 flex items-center gap-2 text-xs font-medium text-muted-foreground">
                 Send email
 
                 <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -205,28 +122,14 @@ const ContactSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-[24px] border border-green-600/15 bg-green-600/[0.03] px-5 py-5 transition-colors hover:border-green-600/30 sm:flex-row sm:items-center sm:px-6 dark:border-green-400/15 dark:bg-green-400/[0.03] dark:hover:border-green-400/30">
+        <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-[24px] border px-5 py-5 sm:flex-row sm:items-center sm:px-6">
           <p className="text-sm text-muted-foreground">
             Available for freelance projects and opportunities.
           </p>
 
           <Link
             href="mailto:tfshorifulislam@gmail.com"
-            className="
-              inline-flex items-center gap-2
-              rounded-full
-              bg-green-600
-              px-5 py-3
-              text-sm font-semibold
-              text-white
-              transition-all duration-300
-              hover:bg-green-700
-              hover:shadow-lg
-              hover:shadow-green-600/20
-              dark:bg-green-500
-              dark:text-black
-              dark:hover:bg-green-400
-            "
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-opacity hover:opacity-80"
           >
             Start a conversation
 

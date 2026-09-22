@@ -1,7 +1,8 @@
+
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, FileText } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
 const stats = [
@@ -22,28 +23,19 @@ const stats = [
 const HeroContent = () => {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 30,
-        clipPath: "inset(8% 0 0 0)",
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        clipPath: "inset(0% 0 0 0)",
-      }}
+      initial={{ opacity: 0, x: 70, y: 8, scale: 0.96 }}
+      animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
       transition={{
         duration: 1,
-        delay: 0.15,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.16, 1, 0.3, 1],
       }}
       className="w-full max-w-3xl text-center lg:text-left"
     >
       {/* Intro */}
       <div className="mb-7 flex items-center justify-center gap-3 lg:justify-start">
-        <span className="h-px w-12 bg-green-600 dark:bg-green-400" />
+        <span className="h-px w-12 bg-emerald-500" />
 
-        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-green-600 dark:text-green-400 sm:text-sm">
+        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400 sm:text-sm">
           Hello, I'm Shoriful
         </span>
       </div>
@@ -53,7 +45,7 @@ const HeroContent = () => {
         <span className="block">
           FULL STACK
 
-          <span className="mt-1 block text-green-600 dark:text-green-400">
+          <span className="mt-1 block text-emerald-600 dark:text-emerald-400">
             WEB DEVELOPER
           </span>
         </span>
@@ -65,33 +57,50 @@ const HeroContent = () => {
         React, Next.js, Node.js, and modern backend technologies.
       </p>
 
-      {/* Buttons */}
-      <div className="mt-9 flex flex-wrap items-center justify-center gap-3.5 lg:justify-start">
+      {/* CTA */}
+      <div className="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
         <Link
           href="#projects"
-          className="group inline-flex h-12 items-center gap-2 rounded-full bg-green-600 px-6 text-sm font-semibold text-white shadow-lg shadow-green-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-400 dark:hover:text-black"
+          className="
+            inline-flex items-center gap-2
+            rounded-full
+            bg-emerald-600
+            px-6 py-3.5
+            text-sm font-semibold text-white
+            shadow-lg shadow-emerald-600/20
+            transition-all duration-300
+            hover:bg-emerald-500
+            hover:-translate-y-0.5
+            hover:shadow-xl hover:shadow-emerald-500/25
+          "
         >
           View Projects
 
-          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          <ArrowUpRight className="h-4 w-4" />
         </Link>
 
         <a
-          href="https://drive.google.com/file/d/1uwRbhBoJpNHJAonmbq4DwjyeVQi3oPxa/view?usp=drive_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex h-12 items-center gap-2 rounded-full border border-border bg-background px-6 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:border-green-600 hover:text-green-600 dark:hover:border-green-400 dark:hover:text-green-400"
+          href="https://drive.google.com/uc?export=download&id=1uwRbhBoJpNHJAonmbq4DwjyeVQi3oPxa"
+          className="
+            inline-flex items-center
+            rounded-full
+            border border-emerald-500/20
+            bg-emerald-500/5
+            px-6 py-3.5
+            text-sm font-semibold
+            transition-all duration-300
+            hover:border-emerald-500
+            hover:bg-emerald-500/10
+            hover:text-emerald-600
+            dark:hover:text-emerald-400
+          "
         >
-          <FileText className="h-4 w-4" />
-
-          Resume
-
-          <ArrowUpRight className="h-3.5 w-3.5 opacity-60 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          Download CV
         </a>
       </div>
 
       {/* Stats */}
-      <div className="mx-auto mt-14 grid max-w-2xl grid-cols-3 border-y border-border/80 lg:mx-0">
+      <div className="mx-auto mt-14 grid max-w-2xl grid-cols-3 border-y border-emerald-500/15 lg:mx-0">
         {stats.map((stat, index) => (
           <div
             key={stat.label}
@@ -100,11 +109,11 @@ const HeroContent = () => {
               text-center
               lg:text-left
               ${index === 0 ? "pr-2 text-left sm:pr-5" : ""}
-              ${index === 1 ? "border-x border-border/80 px-2 sm:px-5" : ""}
+              ${index === 1 ? "border-x border-emerald-500/15 px-2 sm:px-5" : ""}
               ${index === 2 ? "pl-2 text-right sm:pl-5 lg:text-left" : ""}
             `}
           >
-            <h3 className="text-2xl font-bold tracking-[-0.04em] sm:text-4xl">
+            <h3 className="text-2xl font-bold tracking-[-0.04em] text-emerald-600 dark:text-emerald-400 sm:text-4xl">
               {stat.value}
             </h3>
 

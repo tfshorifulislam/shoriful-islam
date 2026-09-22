@@ -35,18 +35,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
     <div
       ref={cardRef}
-      className="
-        sticky top-0
-        flex
-        min-h-[620px]
-        items-center
-        justify-center
-        px-4
-        pb-8
-        sm:px-6
-        sm:pb-10
-        lg:px-8
-      "
+      className="sticky top-0 flex h-screen items-center justify-center px-4 sm:px-6 lg:px-8"
     >
       <motion.article
         style={{
@@ -54,118 +43,47 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           top: `${index * 20}px`,
           zIndex: index + 1,
         }}
-        className="
-          group relative
-          flex h-[600px] w-full max-w-6xl
-          flex-col overflow-hidden
-          rounded-[30px]
-          border bg-card
-          p-3 shadow-2xl
-          transition-all duration-500
-          hover:border-green-600/40
-          hover:shadow-green-600/10
-          sm:p-5
-          md:h-[540px]
-          md:flex-row
-          md:p-6
-          lg:p-8
-          dark:hover:border-green-400/40
-          dark:hover:shadow-green-400/10
-        "
+        className="relative flex h-[650px] w-full max-w-6xl flex-col overflow-hidden rounded-[30px] border bg-card p-3 shadow-2xl sm:p-5 md:h-[580px] md:flex-row md:p-6 lg:p-8"
       >
         {/* Project Image */}
-        <div className="relative h-[42%] w-full overflow-hidden rounded-[22px] bg-muted md:h-full md:w-1/2">
+        <div className="relative h-[45%] w-full overflow-hidden rounded-[22px] bg-muted md:h-full md:w-1/2">
           <Image
             src={project.image}
             alt={project.title}
             fill
             priority={index === 0}
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="
-              object-cover object-top
-              transition-transform duration-700
-              group-hover:scale-105
-            "
+            className="object-cover object-top transition-transform duration-700 hover:scale-105"
           />
 
-          <div className="absolute inset-0 bg-green-600/0 transition-colors duration-500 group-hover:bg-green-600/5 dark:group-hover:bg-green-400/5" />
-
-          <div
-            className="
-              absolute left-4 top-4
-              rounded-full
-              border border-green-600/20
-              bg-background/85
-              px-3 py-1.5
-              text-xs font-bold
-              text-green-600
-              shadow-sm
-              backdrop-blur-md
-              dark:border-green-400/20
-              dark:text-green-400
-            "
-          >
+          <div className="absolute left-4 top-4 rounded-full border bg-background/80 px-3 py-1.5 text-xs font-semibold backdrop-blur-md">
             {String(project.id).padStart(2, "0")}
           </div>
         </div>
 
         {/* Project Content */}
-        <div className="flex w-full flex-1 flex-col justify-between px-2 py-4 sm:px-4 md:w-1/2 md:px-8 md:py-3 lg:px-10">
+        <div className="flex w-full flex-1 flex-col justify-between px-2 py-5 sm:px-4 md:w-1/2 md:px-8 md:py-4 lg:px-10">
           <div>
-            {/* Project Label */}
-            <div className="mb-3 flex items-center gap-3">
-              <span className="h-px w-8 bg-green-600 dark:bg-green-400" />
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+              Project {String(project.id).padStart(2, "0")}
+            </p>
 
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-green-600 dark:text-green-400">
-                Project {String(project.id).padStart(2, "0")}
-              </p>
-            </div>
-
-            {/* Title */}
-            <h3
-              className="
-                max-w-xl
-                text-3xl font-black
-                leading-[0.95]
-                tracking-[-0.045em]
-                transition-colors duration-300
-                group-hover:text-green-600
-                sm:text-4xl
-                lg:text-5xl
-                dark:group-hover:text-green-400
-              "
-            >
+            <h3 className="max-w-xl text-3xl font-black leading-[0.95] tracking-[-0.045em] sm:text-4xl lg:text-5xl">
               {project.title}
             </h3>
 
-            {/* Description */}
-            <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+            <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
               {project.description}
             </p>
           </div>
 
-          <div className="mt-5">
+          <div className="mt-7">
             {/* Tech Stack */}
-            <div className="mb-5 flex flex-wrap gap-2">
+            <div className="mb-6 flex flex-wrap gap-2">
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="
-                    rounded-full
-                    border border-green-600/15
-                    bg-green-600/5
-                    px-3 py-1.5
-                    text-xs font-medium
-                    transition-all duration-300
-                    hover:border-green-600/40
-                    hover:bg-green-600/10
-                    hover:text-green-700
-                    dark:border-green-400/15
-                    dark:bg-green-400/5
-                    dark:hover:border-green-400/40
-                    dark:hover:bg-green-400/10
-                    dark:hover:text-green-300
-                  "
+                  className="rounded-full border bg-muted/40 px-3 py-1.5 text-xs font-medium text-muted-foreground"
                 >
                   {tech}
                 </span>
@@ -178,22 +96,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  relative z-20
-                  inline-flex items-center gap-2
-                  rounded-full
-                  bg-green-600
-                  px-5 py-3
-                  text-sm font-semibold
-                  text-white
-                  transition-all duration-300
-                  hover:bg-green-700
-                  hover:shadow-lg
-                  hover:shadow-green-600/20
-                  dark:bg-green-500
-                  dark:text-black
-                  dark:hover:bg-green-400
-                "
+                className=" relative z-20 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-opacity hover:opacity-80"
               >
                 Live Project
                 <ArrowUpRight className="h-4 w-4" />
@@ -203,22 +106,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  relative z-20
-                  inline-flex items-center gap-2
-                  rounded-full
-                  border border-green-600/20
-                  px-5 py-3
-                  text-sm font-semibold
-                  transition-all duration-300
-                  hover:border-green-600/50
-                  hover:bg-green-600/5
-                  hover:text-green-700
-                  dark:border-green-400/20
-                  dark:hover:border-green-400/50
-                  dark:hover:bg-green-400/5
-                  dark:hover:text-green-300
-                "
+                className="relative z-20 inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-colors hover:bg-muted"
               >
                 <FaGithub className="h-4 w-4" />
                 GitHub

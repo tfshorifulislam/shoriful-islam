@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ProjectCard, {
-  type Project,
+    type Project,
 } from "./ProjectCard";
 import ProjectPagination from "./ProjectPagination";
 import ProjectHeader from "./ProjectHeader";
@@ -113,52 +113,50 @@ const PROJECTS: Project[] = [
 const PROJECTS_PER_PAGE = 4;
 
 const ProjectsSection = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(
-    PROJECTS.length / PROJECTS_PER_PAGE
-  );
+    const totalPages = Math.ceil( PROJECTS.length / PROJECTS_PER_PAGE, );
 
-  const startIndex =
-    (currentPage - 1) * PROJECTS_PER_PAGE;
+    const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
 
-  const currentProjects = PROJECTS.slice(
-    startIndex,
-    startIndex + PROJECTS_PER_PAGE
-  );
+    const currentProjects = PROJECTS.slice( startIndex, startIndex + PROJECTS_PER_PAGE, );
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
 
-    document.getElementById("projects")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+        document.getElementById("projects")
+            ?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+    };
 
-  return (
-    <section id="projects" className="relative">
-      <ProjectHeader />
+    return (
+        <section id="projects" className="relative">
+            {/* Section Header */}
+            <ProjectHeader />
 
-      <div className="relative">
-        {currentProjects.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            index={index}
-          />
-        ))}
-      </div>
+            {/* Project Cards */}
+            <div className="relative">
+                {currentProjects.map((project, index) => (
+                    <ProjectCard
+                        key={project.id}
+                        project={project}
+                        index={index}
+                    />
+                ))}
+            </div>
 
-      <ProjectPagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        totalProjects={PROJECTS.length}
-        startIndex={startIndex}
-        onPageChange={handlePageChange}
-      />
-    </section>
-  );
+            {/* Pagination */}
+            <ProjectPagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                totalProjects={PROJECTS.length}
+                startIndex={startIndex}
+                onPageChange={handlePageChange}
+            />
+        </section>
+    );
 };
 
 export default ProjectsSection;
