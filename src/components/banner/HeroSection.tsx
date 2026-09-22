@@ -9,9 +9,10 @@ const HeroSection = () => {
 
       <div className="flex flex-col-reverse lg:flex-row justify-between w-full items-center min-h-screen mt-40 lg:mt-0">
 
-        <HeroProfileCard />
 
         <HeroContent />
+        
+        <HeroProfileCard />
 
       </div>
 
