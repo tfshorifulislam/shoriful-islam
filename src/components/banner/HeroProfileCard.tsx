@@ -38,7 +38,7 @@ const HeroProfileCard = () => {
 
         <div className="relative aspect-4/5 overflow-hidden rounded-lg bg-muted">
           <Image
-            src="/pic.png"
+            src="/pp.png"
             alt="Shoriful Islam"
             fill
             priority

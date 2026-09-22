@@ -40,14 +40,14 @@ const HeroContent = () => {
 
       {/* Heading */}
       <h1 className="text-[clamp(2.4rem,5vw,6.2rem)] font-black leading-[0.95] tracking-[-0.055em]">
-        <span className="block">
-          FULL STACK
+  <span className="block whitespace-nowrap">
+    FULL STACK
+  </span>
 
-          <span className="mt-1 block text-emerald-600 dark:text-emerald-400">
-            WEB DEVELOPER
-          </span>
-        </span>
-      </h1>
+  <span className="mt-1 block whitespace-nowrap text-emerald-600 dark:text-emerald-400">
+    WEB DEVELOPER
+  </span>
+</h1>
 
       {/* Description */}
       <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8 lg:mx-0">

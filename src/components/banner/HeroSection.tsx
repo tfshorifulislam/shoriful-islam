@@ -3,20 +3,40 @@ import HeroProfileCard from "./HeroProfileCard";
 
 const HeroSection = () => {
   return (
-    <div
+    <section
       id="about"
-      className="w-full max-w-7xl mx-auto px-6 lg:px-8">
+      className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        className="
+          flex
+          min-h-screen
+          w-full
+          flex-col-reverse
+          items-center
+          justify-center
+          gap-12
+          py-24
+          sm:gap-14
+          sm:py-28
+          lg:flex-row
+          lg:items-center
+          lg:justify-between
+          lg:gap-16
+          lg:py-0
+        "
+      >
+        {/* Hero Content */}
+        <div className="w-full lg:w-1/2">
+          <HeroContent />
+        </div>
 
-      <div className="flex flex-col-reverse lg:flex-row justify-between w-full items-center min-h-screen mt-40 lg:mt-0">
-
-
-        <HeroContent />
-        
-        <HeroProfileCard />
-
+        {/* Profile Card */}
+        <div className="flex w-full justify-center lg:w-1/2 lg:justify-end">
+          <HeroProfileCard />
+        </div>
       </div>
-
-    </div>
+    </section>
   );
 };
 
