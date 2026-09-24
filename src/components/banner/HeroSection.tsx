@@ -7,27 +7,9 @@ const HeroSection = () => {
       id="about"
       className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8"
     >
-      <div
-        className="
-          flex
-          min-h-screen
-          w-full
-          flex-col-reverse
-          items-center
-          justify-center
-          gap-12
-          py-24
-          sm:gap-14
-          sm:py-28
-          lg:flex-row
-          lg:items-center
-          lg:justify-between
-          lg:gap-16
-          lg:py-0
-        "
-      >
+      <div className="flex min-h-svh w-full flex-col items-center justify-center gap-10 py-20 mt-10 sm:mt-0 sm:gap-12 sm:py-24 md:gap-14 md:py-28 lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:py-0">
         {/* Hero Content */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full min-w-0 lg:w-1/2">
           <HeroContent />
         </div>
 

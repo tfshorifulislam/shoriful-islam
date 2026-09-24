@@ -60,7 +60,7 @@ const GithubSection = () => {
   return (
     <section
       id="github-stats"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-28"
+      className="relative scroll-mt-20 py-16 sm:py-20 md:py-24 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}

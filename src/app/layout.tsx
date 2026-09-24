@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -7,14 +7,10 @@ import Navbar from "@/components/shared/Navbar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import SmoothScroll from "@/components/smothScroll";
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
 const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -28,9 +24,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(  inter.className, )}
+      className={cn(inter.variable, inter.className)}
     >
-      <body className="min-h-full bg-[#f7f7fa] dark:bg-[#08080a] overflow-x-clip">
+      <body className="min-h-svh bg-[#f7f7fa] overflow-x-clip dark:bg-[#08080a]">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

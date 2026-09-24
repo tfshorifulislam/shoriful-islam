@@ -10,7 +10,7 @@ export function ModeToggle() {
         <button
             type="button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="relative h-9 w-9"
+            className="relative h-9 w-9 rounded-full transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60 dark:hover:bg-muted/50"
         >
             <Sun className="absolute inset-0 m-auto h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
 

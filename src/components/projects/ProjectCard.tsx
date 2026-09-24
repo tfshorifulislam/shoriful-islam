@@ -37,7 +37,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             zIndex: index + 1,
           } as React.CSSProperties
         }
-        className="group relative top-0 flex w-full flex-col overflow-hidden rounded-[24px] border border-border/70 bg-card p-2 shadow-xl shadow-black/5 sm:rounded-[28px] sm:p-3 md:top-[var(--card-offset)] md:h-145 md:flex-row md:rounded-[30px] md:p-4 xl:p-5"
+        className="group relative top-0 flex w-full flex-col overflow-hidden rounded-[24px] border border-border/70 bg-card p-2 shadow-xl shadow-black/5 sm:rounded-[28px] sm:p-3 md:top-(--card-offset) md:h-145 md:flex-row md:rounded-[30px] md:p-4 xl:p-5"
       >
         {/* Project Number */}
         <div className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-background/80 text-[10px] font-bold text-foreground backdrop-blur-xl sm:right-5 sm:top-5 sm:h-11 sm:w-11 sm:text-xs">

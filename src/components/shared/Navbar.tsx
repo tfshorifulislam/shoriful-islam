@@ -23,7 +23,7 @@ const Navbar = () => {
         duration: 0.6,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="fixed left-1/2 top-4 z-50 w-full max-w-7xl -translate-x-1/2 px-6 lg:px-8"
+      className="fixed left-1/2 top-4 z-50 w-full max-w-7xl -translate-x-1/2 px-4 sm:px-6 lg:px-8"
     >
       <nav className="flex h-14 items-center justify-between rounded-full border bg-background/80 px-4 backdrop-blur-xl sm:h-16 sm:px-5">
         {/* Logo */}

@@ -20,6 +20,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 const navItems = [
@@ -31,6 +32,10 @@ const navItems = [
 ];
 
 export function MobileNavbar() {
+  const { setOpenMobile } = useSidebar();
+
+  const closeMenu = () => setOpenMobile(false);
+
   return (
     <>
       {/* Mobile Trigger */}
@@ -39,7 +44,7 @@ export function MobileNavbar() {
       
       <Sidebar
         side="right"
-        className="border-l"
+        className="max-w-[88vw] border-l"
       >
         <SidebarContent className="flex flex-col">
 
@@ -77,18 +82,19 @@ export function MobileNavbar() {
                     <SidebarMenuItem key={item.title}>
 
                       <SidebarMenuButton
-                        className="h-12 rounded-xl px-4 text-base transition-all hover:translate-x-1 hover:bg-muted"
+                        className="h-12 gap-4 rounded-xl px-4 text-base transition-all hover:translate-x-1 hover:bg-muted"
+                        render={
+                          <Link
+                            href={item.href}
+                            onClick={closeMenu}
+                          />
+                        }
                       >
-                        <Link
-                          href={item.href}
-                          className="flex items-center gap-4"
-                        >
-                          <Icon className="h-5 w-5 shrink-0" />
+                        <Icon className="h-5 w-5 shrink-0" />
 
-                          <span className="font-medium">
-                            {item.title}
-                          </span>
-                        </Link>
+                        <span className="font-medium">
+                          {item.title}
+                        </span>
                       </SidebarMenuButton>
 
                     </SidebarMenuItem>

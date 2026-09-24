@@ -11,7 +11,7 @@ const PROJECTS: Project[] = [
         title: "Story-Hub",
         description:
             "Story-Hub is a modern full-stack social publishing platform designed for readers, writers, and content creators. Users can discover and read stories, publish their own articles, interact with other users, manage their profiles, and engage with a growing community. The platform includes a responsive frontend, secure authentication, content management, user interactions, and a scalable backend architecture built for a smooth publishing experience.",
-        image: "/storyhub.png",
+        image: "/storyhub.jpg",
         live: "https://storyhub-iota.vercel.app/",
         github: "https://github.com/tfshorifulislam/StoryHub",
         tech: [
@@ -29,7 +29,7 @@ const PROJECTS: Project[] = [
         title: "UgenAI",
         description:
             "UgenAI is an AI-powered creative platform that allows users to generate, explore, and share AI-generated artwork. The application combines an intuitive modern interface with AI image generation capabilities, allowing users to turn creative ideas into visual content. It also provides an engaging community experience where users can discover generated artwork, explore different creations, and share their own AI-generated images.",
-        image: "/ugenAI 2.jpg",
+        image: "/ugenai.jpg",
         live: "https://ugenai.vercel.app/",
         github: "https://github.com/tfshorifulislam/ugenAI",
         tech: [
@@ -64,7 +64,7 @@ const PROJECTS: Project[] = [
         title: "SportNest",
         description:
             "SportNest is a modern sports venue booking platform that makes it easier for users to discover and book facilities for football, cricket, futsal, and other sports. The platform provides an intuitive booking experience with organized venue information and responsive interfaces. It is designed to simplify the process of finding suitable sports facilities while providing a scalable foundation for managing venues, users, and bookings.",
-        image: "/sportnest.png",
+        image: "/sportnest.jpg",
         live: "https://sport-nest-rouge.vercel.app",
         github: "https://github.com/tfshorifulislam/sport-nest-client",
         tech: [
@@ -96,7 +96,7 @@ const PROJECTS: Project[] = [
         title: "Pixora",
         description:
             "Pixora is a retro-futuristic AI-inspired landing page focused on creating an immersive and visually engaging digital experience. The project combines modern frontend technologies with bold visual elements, smooth animations, responsive layouts, and carefully designed interactions. It demonstrates how modern web technologies can be used to create highly polished interfaces with a strong visual identity and engaging user experience.",
-        image: "/pixora.png",
+        image: "/pixora.jpg",
         live: "https://pixora-rho.vercel.app/",
         github: "https://github.com/tfshorifulislam/pixora",
         tech: [
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
     };
 
     return (
-        <section id="projects" className="relative px-6 lg:px-8 max-w-7xl mx-auto">
+        <section id="projects" className="relative mx-auto w-full max-w-7xl scroll-mt-20 px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <ProjectHeader />
 
